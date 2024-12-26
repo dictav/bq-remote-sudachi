@@ -1,0 +1,20 @@
+[project]
+name = "bq-remote-sudachi"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Shintaro Abe", email = "dictav@gmail.com" }
+]
+dependencies = [
+    "flask>=3.1.0",
+    "sudachidict-core>=20241021",
+    "sudachipy>=0.6.9",
+    "waitress>=3.0.2",
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = []
