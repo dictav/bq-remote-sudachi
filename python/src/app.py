@@ -3,7 +3,7 @@ from sudachipy import Dictionary, SplitMode
 
 app = Flask(__name__)
 app.json.ensure_ascii=False
-tokenizer = Dictionary().create()
+tokenizer = Dictionary().create(mode=SplitMode.B)
 
 @app.route('/check', methods=['GET'])
 def check():
@@ -21,9 +21,6 @@ def check_tokenize():
 # BigQuery Remote Function endpoint
 @app.route('/', methods=['POST'])
 def tokenize():
-    print("header", dict(request.headers))
-    print("body", request.json)
-
     try:
         replies = []
         calls = request.json['calls']
